@@ -1,20 +1,18 @@
-import { createRouter, createWebHashHistory } from "vue-router";
+import { createRouter, createWebHistory } from "vue-router";
 
 
+import authRoutes from './auth';
 
-const Home = { template: '<div>Home</div>' }
-const About = { template: '<div>About</div>' }
 
 
 const routes = [
-  { path: '/', component: Home },
-  { path: '/about', component: About },
+    ...authRoutes,
 ]
 
 
 
 const router = createRouter({
-  history: createWebHashHistory(),
+  history: createWebHistory(),
   routes,
 })
 export default router;
