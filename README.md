@@ -43,3 +43,114 @@ This platform is designed to allow users to create and participate in quizzes si
 ## Conclusion
 
 This Quiz Platform is a comprehensive solution for creating and managing quizzes. With its user-friendly interface, it aims to provide an engaging and efficient experience for both quiz creators and participants.
+
+
+## API Documentation
+### Authentication
+- **Register User**
+    - Endpoint: `/api/auth/register`
+    - Method: `POST`
+    - Request Body: 
+        ```json
+        {
+            "first_name": "John",
+            "last_name": "Doe",
+            "email": "john@demo.com",
+            "password": "12345678",
+            "password_confirmation": "12345678"
+        }
+        ```
+    - Response: 
+        ```json
+        {
+            "success": true,
+            "message": "User registered successfully",
+            "data": {
+                "user": {
+                        "id": "10",
+                        "first_name": "John",
+                        "last_name": "Doe",
+                        "email": "john@demo.com",
+                        "status": "active",
+                        "created_at": "2024-02-18T12:00:00.000000Z",
+                        "updated_at": "2024-02-18T12:00:00.000000Z"
+                }
+            }
+        }
+        ```
+      
+- **Login User**
+    - Endpoint: `/api/auth/login`
+    - Method: `POST`
+    - Request Body: 
+      ```json
+      {
+          "email": "john@demo.com",
+          "password": "12345678"
+      }
+      ```
+    - Response: 
+        ```json
+        {
+            "success": true,
+            "message": "string",
+            "data": {
+                "token": "11|px27v8iaiDamrLg4htfNGQamLPDMjMTp48EpqNSr",
+                 "type": "Bearer"
+            }
+        }
+        ```
+- **Logout User**
+    - Endpoint: `/api/auth/logout`
+    - Method: `POST`
+      - Request Header: 
+          ```json
+          {
+              "Authorization": "Bearer  11|px27v8iaiDamrLg4htfNGQamLPDMjMTp48EpqNSr"
+          }
+        ```
+        
+    - Response:
+        ```json
+        {
+            "success": true,
+            "message": "User logged out successfully"
+        }
+        ```
+      
+- ** Forgot Password**
+    - Endpoint: `/api/auth/forgot-password`
+    - Method: `POST`
+    - Request Body: 
+        ```json
+        {
+            "email": "john@demo.com"
+        }
+        ```
+    - Response: 
+        ```json
+        {
+            "success": true,
+            "message": "Password reset link sent to your email"
+        }
+        ```
+    
+- **Reset Password**
+    - Endpoint: `/api/auth/reset-password`
+    - Method: `POST`
+    - Request Body: 
+        ```json
+        {
+            "email": "john@demo.com",
+            "password": "12345678",
+            "password_confirmation": "12345678",
+            "token": "9e043e50-d718-416e-986e-78605f55ddd8"
+        }
+        ```
+    - Response: 
+        ```json
+        {
+            "success": true,
+            "message": "Password reset successfully"
+        }
+        ```
