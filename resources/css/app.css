@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .form-group {
-    @apply w-full max-w mb-6
+    @apply w-full mb-6
 }
 
 .form-label {
