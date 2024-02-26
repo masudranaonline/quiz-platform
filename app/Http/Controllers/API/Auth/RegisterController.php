@@ -19,6 +19,7 @@ class RegisterController extends Controller
      */
     public function __invoke(RegisterRequest $request)
     {
+        // dd($request->all());
         $user = User::create([
             'first_name' => $request->first_name,
             'last_name' => $request->last_name,
