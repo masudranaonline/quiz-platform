@@ -1,5 +1,27 @@
 <script setup>
 import InputField from '../../components/InputField.vue';
+import axios from 'axios';
+import { ref } from 'vue';
+
+const formData = ref({
+    email: '',
+    password: '',
+});
+
+const handelLogin = async () => {
+    try {
+        const response = await axios.post('/api/auth/login', formData.value)
+        console.log(response.data);
+        if(response.data.success) {
+            formData.value.email = '';
+            formData.value.password = '';
+            localStorage.setItem('token', response.data.data.token);
+
+        }
+    }catch (error) {
+        console.error('Error submitting form:', error);
+    }
+}
 </script>
 
 <template>
@@ -16,13 +38,14 @@ import InputField from '../../components/InputField.vue';
                     <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
                         Sign in to your account
                     </h1>
-                    <form class="space-y-4 md:space-y-6" action="#">
+                    <form class="space-y-4 md:space-y-6" @submit.prevent="handelLogin">
                        <InputField
                             label="email"
                             type="email"
                             name="email"
                             id="email"
                             placeholder="name@company.com" 
+                            v-model="formData.email"
                             />
 
                             <InputField
@@ -31,6 +54,7 @@ import InputField from '../../components/InputField.vue';
                             name="password"
                             id="password"
                             placeholder="••••••••" 
+                            v-model="formData.password"
                             />
 
                        
