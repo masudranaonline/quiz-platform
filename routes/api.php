@@ -23,6 +23,8 @@ Route::group(['prefix' => 'auth'], function () {
     Route::post('reset-password', \App\Http\Controllers\API\Auth\ResetPasswordController::class);
 });
 
+
+
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
