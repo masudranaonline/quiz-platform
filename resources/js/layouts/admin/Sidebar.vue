@@ -1,8 +1,9 @@
 <template>
     <nav class="fixed top-0 left-0 z-20 h-full pb-10 overflow-x-hidden overflow-y-auto transition origin-left transform bg-gray-900 w-60 md:translate-x-0"
       :class="{ '-translate-x-full': !sideBar, 'translate-x-0': sideBar }" @click.away="sideBar = false">
-      <a href="/" class="flex items-center px-4 py-5">
-        <img src="/brand/kutty-logo-white.png" alt="Kutty Logo" class="w-20" />
+      <a href="/admin" class="flex items-center text-white px-4 py-5">
+        <!-- <img src="" alt="Kutty Logo" class="w-20" /> -->
+        Quiz App
       </a>
       <nav class="text-sm font-medium text-gray-500" aria-label="Main Navigation">
         <a class="flex items-center px-4 py-3 transition cursor-pointer group hover:bg-gray-800 hover:text-gray-200" href="#">

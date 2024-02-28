@@ -1,8 +1,11 @@
 <!-- MainLayout.vue -->
 <template>
     <section class="min-h-screen bg-gray-50">
-      <TopBar />
       <SideBar />
+      <div class="ml-0 transition md:ml-60">
+
+        <TopBar />
+      </div>
       <div class="ml-0 transition md:ml-60">
         <!-- Main content -->
         <slot></slot>
