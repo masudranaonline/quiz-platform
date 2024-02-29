@@ -9,6 +9,7 @@
       <div class="ml-0 transition md:ml-60">
         <!-- Main content -->
         <slot></slot>
+        <!-- <div class="p-4"><div class="-mt-2 border-4 border-dashed rounded h-96"></div></div> -->
       </div>
       <Footer />
       <!-- Sidebar Backdrop -->
