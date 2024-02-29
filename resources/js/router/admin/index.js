@@ -2,7 +2,8 @@ const routes = [
     {
         path: '/admin',
         name: 'admin',
-        component: () => import(/* webpackChunkName: "admin" */ '@/layouts/admin/Layout.vue')
+        // component: () => import(/* webpackChunkName: "admin" */ '@/layouts/admin/Layout.vue')
+        component: () => import(/* webpackChunkName: "admin" */ '@/views/admin/Home.vue')
         
     },
     {

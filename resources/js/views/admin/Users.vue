@@ -1,5 +1,18 @@
 <script setup>
-    import Layout from '../../layouts/admin/Layout.vue';
+    import Layout from '@/layouts/admin/Layout.vue';
+    import { ref } from 'vue';
+    import axios from 'axios';
+    import { onMounted } from 'vue';
+
+    const users = ref([]);
+    const getUsers = async () => {
+        const response = await axios.get('/api/users');
+        users.value = response.data; 
+        console.log(users.value);
+    }
+
+    onMounted(() => getUsers());
+
 </script>
 <template>
     <Layout>
@@ -10,65 +23,36 @@
                 <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                     <tr>
                         <th scope="col" class="px-6 py-3">
-                            Product name
+                            User name
                         </th>
                         <th scope="col" class="px-6 py-3">
-                            Color
+                            Last Name
                         </th>
                         <th scope="col" class="px-6 py-3">
-                            Category
+                            email
                         </th>
                         <th scope="col" class="px-6 py-3">
-                            Price
+                            Status
                         </th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                <tbody >
+                    <tr v-for="user in users" :key="user.id" class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
                         <th scope="row"
                             class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                            Apple MacBook Pro 17"
+                            {{ user.first_name }}
                         </th>
                         <td class="px-6 py-4">
-                            Silver
+                            {{ user.last_name}}
                         </td>
                         <td class="px-6 py-4">
-                            Laptop
+                            {{ user.email }}
                         </td>
                         <td class="px-6 py-4">
-                            $2999
+                            {{ user.status }}
                         </td>
                     </tr>
-                    <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                        <th scope="row"
-                            class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                            Microsoft Surface Pro
-                        </th>
-                        <td class="px-6 py-4">
-                            White
-                        </td>
-                        <td class="px-6 py-4">
-                            Laptop PC
-                        </td>
-                        <td class="px-6 py-4">
-                            $1999
-                        </td>
-                    </tr>
-                    <tr class="bg-white dark:bg-gray-800">
-                        <th scope="row"
-                            class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                            Magic Mouse 2
-                        </th>
-                        <td class="px-6 py-4">
-                            Black
-                        </td>
-                        <td class="px-6 py-4">
-                            Accessories
-                        </td>
-                        <td class="px-6 py-4">
-                            $99
-                        </td>
-                    </tr>
+                    
                 </tbody>
             </table>
         </div>
