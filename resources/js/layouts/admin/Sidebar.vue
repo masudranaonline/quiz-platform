@@ -1,7 +1,8 @@
 <template>
   <nav class="fixed top-0 left-0 z-20 h-full pb-10 overflow-x-hidden overflow-y-auto transition origin-left transform bg-gray-900 w-60 md:translate-x-0 -translate-x-full" :class="{ '-translate-x-full' : !sideBar, 'translate-x-0' : sideBar }" @click.away="sideBar = false">
-    <a href="https://kutty.netlify.app/" class="flex items-center px-4 py-5">
-        <img src="https://kutty.netlify.app/brand/kutty-logo-white.png" alt="Kutty Logo" class="w-20">
+    <a href="https://kutty.netlify.app/" class="flex items-center px-4 py-5 text-white">
+        <!-- <img src="https://kutty.netlify.app/brand/kutty-logo-white.png" alt="Kutty Logo" class="w-20"> -->
+        Quiz App
     </a>
     <nav class="text-sm font-medium text-gray-500" aria-label="Main Navigation">
         <router-link class="flex items-center px-4 py-3 transition cursor-pointer group hover:bg-gray-800 hover:text-gray-200" to="/admin">
@@ -17,12 +18,26 @@
             </svg>
             <span>Users</span>
         </router-link>
+        <router-link class="flex items-center px-4 py-3 transition cursor-pointer group hover:bg-gray-800 hover:text-gray-200" to="/admin/category">
+            <svg class="shrink-0 w-5 h-5 mr-2 text-gray-400 transition group-hover:text-gray-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentcolor">
+                <path d="M5 3a1 1 0 000 2c5.523.0 10 4.477 10 10a1 1 0 102 0C17 8.373 11.627 3 5 3z"></path>
+                <path d="M4 9a1 1 0 011-1 7 7 0 017 7 1 1 0 11-2 0 5 5 0 00-5-5A1 1 0 014 9zM3 15a2 2 0 114 0 2 2 0 01-4 0z"></path>
+            </svg>
+            <span>Category</span>
+        </router-link>
         <router-link class="flex items-center px-4 py-3 transition cursor-pointer group hover:bg-gray-800 hover:text-gray-200" to="/admin/quiz">
             <svg class="shrink-0 w-5 h-5 mr-2 text-gray-400 transition group-hover:text-gray-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentcolor">
                 <path d="M5 3a1 1 0 000 2c5.523.0 10 4.477 10 10a1 1 0 102 0C17 8.373 11.627 3 5 3z"></path>
                 <path d="M4 9a1 1 0 011-1 7 7 0 017 7 1 1 0 11-2 0 5 5 0 00-5-5A1 1 0 014 9zM3 15a2 2 0 114 0 2 2 0 01-4 0z"></path>
             </svg>
-            <span>Quiz</span>
+            <span>Quizzes</span>
+        </router-link>
+        <router-link class="flex items-center px-4 py-3 transition cursor-pointer group hover:bg-gray-800 hover:text-gray-200" to="/admin/quiz">
+            <svg class="shrink-0 w-5 h-5 mr-2 text-gray-400 transition group-hover:text-gray-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentcolor">
+                <path d="M5 3a1 1 0 000 2c5.523.0 10 4.477 10 10a1 1 0 102 0C17 8.373 11.627 3 5 3z"></path>
+                <path d="M4 9a1 1 0 011-1 7 7 0 017 7 1 1 0 11-2 0 5 5 0 00-5-5A1 1 0 014 9zM3 15a2 2 0 114 0 2 2 0 01-4 0z"></path>
+            </svg>
+            <span>Questions</span>
         </router-link>
         <a class="flex items-center px-4 py-3 text-gray-200 transition bg-gray-800 cursor-pointer group hover:bg-gray-800 hover:text-gray-200" href="#">
             <svg class="shrink-0 w-5 h-5 mr-2 text-gray-300 transition group-hover:text-gray-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentcolor">

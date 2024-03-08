@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('quizzes', function (Blueprint $table) {
             $table->id();
             $table->foreignId('creator_id')->constrained('users')->onDelete('cascade');
-            $table->string('subject');
+            $table->foreignId('category_id')->constrained()->onDelete('cascade');
             $table->text('description')->nullable();
             $table->boolean('is_public')->default(true);
             $table->timestamp('start_at')->nullable();
@@ -23,6 +23,7 @@ return new class extends Migration
             $table->boolean('is_negative_mark')->default(false);
             $table->float('negative_mark')->default(0);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

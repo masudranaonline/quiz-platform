@@ -5,13 +5,15 @@ namespace App\Models;
 use DateTime;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Quiz extends Model
 {
     use HasFactory;
+    use SoftDeletes;
 
     protected $fillable=[
-        'subject',
+        'category_id',
         'description',
         'creator_id',
         'is_public',
@@ -33,6 +35,10 @@ class Quiz extends Model
 
     public function questions(){
         return $this->hasMany(Question::class);
+    }
+
+    public function category() {
+        return $this->belongsTo(Category::class);
     }
 
 }

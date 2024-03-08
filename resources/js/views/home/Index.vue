@@ -43,23 +43,23 @@
                             </p>
                     </div>
                     <div class="text-center justify-center border bg-white rounded shadow-sm my-2 ">
-                        <img class="w-40 h-40 mx-auto" src="/assets/images/biology.webp" alt="">
+                        <img class="w-40 h-40 mx-auto" src="/assests/images/biology.webp" alt="">
                         <p class="text-2xl font-bold pt-2 pb-6 text-gray-900">Biology</p>
                     </div>
                     <div class="text-center justify-center border bg-white rounded shadow-sm my-2 ">
-                        <img class="w-40 h-40 mx-auto" :src="Image1" alt="">
+                        <img class="w-40 h-40 mx-auto" src="/assests/images/biology.webp" alt="">
                         <p class="text-2xl font-bold pt-2 pb-6 text-gray-900">Biology</p>
                     </div>
                     <div class="text-center justify-center border bg-white rounded shadow-sm my-2 ">
-                        <img class="w-40 h-40 mx-auto" :src="Image1" alt="">
+                        <img class="w-40 h-40 mx-auto" src="/assests/images/biology.webp" alt="">
                         <p class="text-2xl font-bold pt-2 pb-6 text-gray-900">Biology</p>
                     </div>
                     <div class="text-center justify-center border bg-white rounded shadow-sm my-2 ">
-                        <img class="w-40 h-40 mx-auto" :src="Image1" alt="">
+                        <img class="w-40 h-40 mx-auto" src="/assests/images/biology.webp" alt="">
                         <p class="text-2xl font-bold pt-2 pb-6 text-gray-900">Biology</p>
                     </div>
                     <div class="text-center justify-center border bg-white rounded shadow-sm my-2 ">
-                        <img class="w-40 h-40 mx-auto" :src="Image1" alt="">
+                        <img class="w-40 h-40 mx-auto" src="/assests/images/biology.webp" alt="">
                         <p class="text-2xl font-bold pt-2 pb-6 text-gray-900">Biology</p>
                     </div>
                 </div>

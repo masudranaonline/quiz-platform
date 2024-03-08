@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('type',20)->default('radio');
             $table->float('mark')->default(1);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
