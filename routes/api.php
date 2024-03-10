@@ -1,9 +1,9 @@
 <?php
 
-use App\Http\Controllers\Admin\CategoryController;
-use App\Http\Controllers\Admin\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\API\Admin\UserController;
+use App\Http\Controllers\API\Admin\CategoryController;
 /*
 |--------------------------------------------------------------------------
 | API Routes

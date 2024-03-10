@@ -1,21 +1,24 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\API\Admin;
 
-use App\Models\Category;
+use App\Models\User;
 use Illuminate\Http\Request;
+use App\Traits\HasApiResponse;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Auth;
 
-class CategoryController extends Controller
+class UserController extends Controller
+
 {
+    use HasApiResponse;
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $categories = Category::all();
-        return response()->json($categories);
+        $users = User::paginate(25);
+        
+        return $this->successResponse('Users Data Fatched Successfully', $users);
     }
 
     /**
@@ -31,10 +34,7 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        $category = Category::create([
-            'name' => $request->name,
-            'creator_id' => 1,
-        ]);
+        //
     }
 
     /**

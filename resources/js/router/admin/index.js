@@ -16,6 +16,11 @@ const routes = [
         path: '/admin/category',
         name: 'admin.category',
         component: () => import(/* webpackChunkName: "admin.users" */ '@/views/admin/Category.vue')
+    },
+    {
+        path: '/admin/quizzes',
+        name: 'admin.quizzes',
+        component: () => import(/* webpackChunkName: "admin.users" */ '@/views/admin/Quizzes.vue')
     }
 ];
 
